@@ -1,12 +1,12 @@
 Summary:	A tool for replaying captured database server load
 Name:		percona-playback
-Version:	0.4
+Version:	0.6
 Release:	0.1
 License:	GPL
-URL:		http://www.percona.com/
-Source0:	http://www.percona.com/downloads/Percona-Playback/Percona-Playback-%{version}/source/%{name}-%{version}.tar.gz
-# Source0-md5:	4cbe45401ee87a611d172301c13d4a4e
+Source0:	http://www.percona.com/downloads/Percona-Playback/LATEST/source/%{name}-%{version}.tar.gz
+# Source0-md5:	d459f860052acfbad1c2c3d82cc62c25
 Group:		Applications/Databases
+URL:		http://www.percona.com/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	boost-devel
@@ -43,6 +43,9 @@ developing applications that use %{name}.
 
 %prep
 %setup -q
+
+%{__sed} -i -e 's/AM_PROG_MKDIR_P/AC_PROG_MKDIR_P/' m4/po.m4
+%{__sed} -i -e 's/mkdir_p/MKDIR_P/' po/Makefile.in.in
 
 %build
 %{__libtoolize}
