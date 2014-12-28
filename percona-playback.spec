@@ -12,7 +12,7 @@ BuildRequires:	automake
 BuildRequires:	boost-devel
 BuildRequires:	doxygen
 BuildRequires:	dpkg
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	intltool
 BuildRequires:	lcov
 #BuildRequires:	libdrizzle-devel
